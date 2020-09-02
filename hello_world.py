@@ -1,5 +1,5 @@
-from pyautogui import hotkey, press, screenshot, click, position
-import ai
+from pyautogui import hotkey, press, screenshot, click, position, size
+import Ai
 import pyperclip
 import time
 import sys
@@ -10,7 +10,7 @@ def captureScreen():
     myScreenshot.save('screenshot.png')
 
 def moveMouse():
-    point = ai.getPoints()
+    point = Ai.getPoints()
     try:
         click(point[0], point[1])
     except:
@@ -28,7 +28,7 @@ def copyAndWrite(file):
 
     with open(file, "r") as a_file:
         for line in a_file:
-            if ai.isFlooding(bounding_box):
+            if Ai.isFlooding(bounding_box):
                 print("You are sending messages too fast.")
                 for second in range (0, 5):
                     time.sleep(1)
@@ -63,16 +63,17 @@ def tracer(message):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        tracer("File not especified")
-    subprocess.run(["wmctrl", "-a", "discord"])
-    time.sleep(1)
+    # if len(sys.argv) < 2:
+    #     tracer("File not especified")
+    # subprocess.run(["wmctrl", "-a", "discord"])
+    # time.sleep(1)
 
-    captureScreen()
-    moveMouse()
-    start = time.time()
-    copyAndWrite(sys.argv[1])
-    end = time.time()
-    print(end - start)
+    # captureScreen()
+    # moveMouse()
+    # start = time.time()
+    # copyAndWrite(sys.argv[1])
+    # end = time.time()
+    # print(end - start)
 
-    print("Mouse moved. Breaking the program.")
+    # print("Mouse moved. Breaking the program.")
+    print(size())
