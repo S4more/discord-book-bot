@@ -1,4 +1,4 @@
-from pyautogui import hotkey, press, screenshot, click, position, size
+from pyautogui import hotkey, press, screenshot, click, position
 import Ai
 import pyperclip
 import time
@@ -63,17 +63,16 @@ def tracer(message):
 
 
 if __name__ == "__main__":
-    # if len(sys.argv) < 2:
-    #     tracer("File not especified")
-    # subprocess.run(["wmctrl", "-a", "discord"])
-    # time.sleep(1)
+    if len(sys.argv) < 2:
+        tracer("File not especified")
+    subprocess.run(["wmctrl", "-a", "discord"])
+    time.sleep(1)
 
-    # captureScreen()
-    # moveMouse()
-    # start = time.time()
-    # copyAndWrite(sys.argv[1])
-    # end = time.time()
-    # print(end - start)
+    captureScreen()
+    moveMouse()
+    start = time.time()
+    copyAndWrite(sys.argv[1])
+    end = time.time()
+    print(end - start)
 
-    # print("Mouse moved. Breaking the program.")
-    print(size())
+    print("Mouse moved. Breaking the program.")

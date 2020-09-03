@@ -6,8 +6,8 @@ import subprocess
 
 # TODO user needs to decide which monitor
 def screenResolution() -> dict:
-    output = subprocess.Popen('xrandr | grep "\*" | cut -d" " -f4',shell=True, stdout=subprocess.PIPE).communicate()[0]
-    resolution = output.split()[1].split(b'x')
+    # output = subprocess.Popen('xrandr | grep "\*" | cut -d" " -f4',shell=True, stdout=subprocess.PIPE).communicate()[0]
+    # resolution = output.split()[1].split(b'x')
     return {'width' : 1400, 'height' : 900}
 
 
